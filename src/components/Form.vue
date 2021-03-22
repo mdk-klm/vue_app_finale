@@ -89,7 +89,7 @@ export default {
                     }, 2000);
                 })
                 .catch(() => {
-                    this.$toast.error("erreur", {position: 'bottom-right'});
+                    this.$toast.error("ce mail existe déja", {position: 'bottom-right'});
                 })
         },
         // Modifier un utilisateur
