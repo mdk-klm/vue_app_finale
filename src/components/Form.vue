@@ -80,8 +80,7 @@ export default {
 
            axios
                 .post('http://localhost:8081/users', userData)
-                .then((response) => {
-                    console.log(response);
+                .then(() => {
                     this.$toast.success("utilisateur créé.", {
                         position: 'bottom-right'
                     });
@@ -90,7 +89,7 @@ export default {
                     }, 2000);
                 })
                 .catch(() => {
-                    this.$toast.error("Cet email est déjà utilisé", {position: 'bottom-right'});
+                    this.$toast.error("erreur", {position: 'bottom-right'});
                 })
         },
         // Modifier un utilisateur

@@ -6,7 +6,7 @@
             <th>Nom</th>
             <th>Prénom</th>
             <th>Email</th>
-            <th @click="changeSort">
+            <th class="age_sort" @click="changeSort">
                 Age
                 <i v-if="sortDirection" class="fa"
                    v-bind:class="[ sortDirection === 'asc' ? 'fa-sort-up' : 'fa-sort-down' ]"></i>
@@ -69,7 +69,6 @@ export default {
         }
     },
     methods: {
-        // Supprime un utilisateur du tableau en fonction de son id
         deleteUser(userId) {
             console.log(userId);
             axios
@@ -80,7 +79,7 @@ export default {
                     });
                     setTimeout(()=>{
                         this.$router.go(0);
-                    },2000);
+                    },1000);
                 })
         }
     }
@@ -107,6 +106,9 @@ img {
 }
 
 .icon {
+    cursor: pointer;
+}
+.age_sort{
     cursor: pointer;
 }
 </style>
